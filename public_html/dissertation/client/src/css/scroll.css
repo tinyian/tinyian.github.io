@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #161616;
+}
+
+.menu {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.menu-item {
+    position: relative;
+    height: 20%;
+}
+
+a {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+a:hover {
+    opacity: 0.6;
+}

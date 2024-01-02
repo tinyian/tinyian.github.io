@@ -1,0 +1,356 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Theme Data */
+
+:root[data-theme="light"] {
+    --bg-color: #FAFAFA;
+    --text-color: #050505;
+    --primary: #F0B427;
+    --secondary: #f9f0d2;
+    --accent: #be4186;
+    --spacing: 500px;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #050505;
+    --text-color: #FAFAFA;
+    --primary: #F0B427;
+    --secondary: #2d2406;
+    --accent: #d88db6;
+    --spacing: 500px;
+}
+
+/* Basic HTML Components */
+
+#tokenSection {
+    grid-column: 1 / span 12;
+    height: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    display: grid;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 89;
+}
+
+main {
+    width: 100%;
+    z-index: 90;
+    margin: 0px auto;
+    padding: 7rem 0;
+    display: inherit;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: 900;
+    border-radius: 10rem;
+    background-color: var(--secondary);
+}
+
+section {
+    display: inherit;
+}
+
+.page {
+    position: relative;
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 150ms;
+    z-index: 97;
+}
+
+.page.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Floating Toolbar */
+
+#tools {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    grid-column: 6 / 12;
+    padding: 2rem;
+    color: var(--text-color);
+    z-index: 98;
+}
+
+#topBtn {
+    --offset: 50px;
+
+    position: relative;
+    place-self: end;
+    margin-top: calc(100vh + var(--offset));
+
+    /* visual styling */
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--text-color);
+    background-color: var(--secondary);
+    border-radius: 100px;
+    white-space: nowrap;
+    filter: drop-shadow(0px 0px 5px var(--accent));
+    transition: filter 0.4s ease-in-out;
+transition: color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+#topBtn:hover {
+  color: var(--bg-color);
+  background-color: var(--accent);
+  filter: drop-shadow(0px 0px 2px var(--accent));
+}
+
+#theme {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2vh;
+}
+
+#themeBtn {
+    position: relative;
+
+    /* visual styling */
+    text-decoration: none;
+    border: none;
+    padding: 10px;
+    font-size: 12;
+  color: var(--text-color);
+    background-color: var(--secondary);
+    border-radius: 100px;
+    white-space: nowrap;
+    filter: drop-shadow(0px 0px 5px var(--accent));
+    transition: filter 0.4s ease-in-out;
+transition: color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+#themeBtn:hover {
+  color: var(--bg-color);
+  background-color: var(--accent);
+  filter: drop-shadow(0px 0px 2px var(--accent));
+}
+
+#controlBtn {
+    position: relative;
+
+    /* visual styling */
+    text-decoration: none;
+    border: none;
+    padding: 10px;
+    font-size: 12;
+  color: var(--text-color);
+    background-color: var(--secondary);
+    border-radius: 100px;
+    white-space: nowrap;
+    filter: drop-shadow(0px 0px 5px var(--accent));
+    transition: filter 0.4s ease-in-out;
+transition: color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+#controlBtn:hover {
+  color: var(--bg-color);
+  background-color: var(--accent);
+  filter: drop-shadow(0px 0px 2px var(--accent));
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2vh;
+    gap: .25rem;
+}
+
+/* Text Styles */
+
+blockquote {
+    margin: 0;
+    padding: 1rem;
+}
+
+blockquote p {
+    color: var(--bg-color);
+    background-color: var(--accent);
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    display: inline;
+    line-height: 1;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p, li {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+a, span {
+    color: var(--text-color);
+}
+
+i {
+    font-size:  1rem;
+}
+
+label {
+    font-size:  1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+input {
+  width: auto;
+  height: 5vh;
+  position: relative;
+  padding: 10px;
+  border-radius: 4rem;
+    color: var(--text-color);
+    background-color: var(--secondary);
+    border: none;
+  transition: color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+}
+
+input:hover {
+  color: var(--bg-color);
+  background-color: var(--accent);
+}
+
+select {
+    width: auto;
+    height: 5vh;
+    padding-left: 1vh;
+    position: relative;
+    border: none;
+    border-radius: 4rem;
+    color: var(--text-color);
+    background-color: var(--secondary);
+    transition: color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+}
+
+select:hover {
+  color: var(--bg-color);
+  background-color: var(--accent);
+}
+
+/* Sections */
+
+#login {
+    background: var(--primary);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    padding: 2rem;
+    height: auto;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+#header {
+    background: var(--primary);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    padding: 2rem;
+    grid-column: 2 / 12;
+}
+
+#profile {
+    padding: 2rem;
+    grid-column: 6 / 10;
+    rotate: -20deg;
+    scale: 75%;
+}
+
+#topArtists {
+    padding: 2rem;
+    grid-column: 2 / 12;
+}
+
+#tagline {
+    grid-column: 6 / 12;
+}
+
+#player {
+    background: var(--primary);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    padding: 2rem;
+    grid-column: 1 / span 12;
+}
+
+#quote {
+    grid-column: 6 / 12;
+}
+
+#topTracks {
+    grid-column: 2 / 12;
+}
+
+#visuals {
+    background: var(--primary);
+    color: var(--text-color);
+    font-size: 2.5rem;
+    padding: 2rem;
+    grid-column: 1 / span 12;
+    height: 60vh;
+    width: 100vh;
+    overflow: hidden;
+}
+
+#share {
+    grid-column: 1 / span 12;
+    grid-row-gap: 5rem;
+    margin-bottom: 0;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}

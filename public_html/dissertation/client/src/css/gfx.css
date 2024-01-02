@@ -1,0 +1,402 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Profile 2D Graphics */
+
+#profileHead {
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        left: -14px;
+        position: relative;
+        z-index: 94;
+}
+
+#profileText {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#profileBody {
+    display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 79px;
+        margin-left: 10px;
+        position: relative;
+        z-index: 94;
+}
+
+#userAvi {
+    width: 175px;
+        height: 175px;
+        scale: 75%;
+}
+
+#userPFP {
+    border: none;
+    border-radius: 10rem;
+}
+
+#iPod {
+    z-index: 94;
+}
+
+#menu {
+    font-size: 24px;
+    position: absolute;
+    top: 365px;
+    color: var(--primary);
+    font-weight: bold;
+    left: 165px;
+}
+
+#back {
+    font-size: 36px;
+    position: absolute;
+    top: 467px;
+    color: var(--primary);
+    font-weight: bold;
+    left: 84px;
+}
+
+#forward {
+    font-size: 36px;
+    position: absolute;
+    top: 465px;
+    color: var(--primary);
+    font-weight: bold;
+    left: 286px;
+}
+
+#playpause {
+    position: absolute;
+    top: 568px;
+    left: 180px;
+}
+
+#playpause > i{
+    font-size: 36px;
+    position: relative;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+#profile_gfx_1 {
+    background: var(--bg-color);
+        width: 357px;
+        height: 300px;
+        opacity: 100%;
+        border: none;
+        border-radius: 2rem;
+        position: absolute;
+        margin-top: 22px;
+        margin-left: 22px;
+        z-index: 93;
+}
+
+#profile_gfx_2 {
+    background: var(--secondary);
+    width: 400px;
+    height: 650px;
+    opacity: 100%;
+    border: none;
+    border-radius: 2rem;
+    position: absolute;
+    margin-top: 0px;
+    filter: drop-shadow(-10mm 15mm 14mm var(--primary));
+    z-index: 92;
+}
+
+#profile_gfx_3 {
+    background: var(--accent);
+    width: 290px;
+    height: 290px;
+    opacity: 100%;
+    border: none;
+    border-radius: 10rem;
+    position: absolute;
+    margin-top: 340px;
+    margin-left: 56px;
+    z-index: 93;
+}
+
+#profile_gfx_4 {
+    background: var(--secondary);
+    width: 75px;
+    height: 75px;
+    opacity: 100%;
+    border: none;
+    border-radius: 10rem;
+    position: absolute;
+    margin-top: 446px;
+        margin-left: 167px;
+    z-index: 94;
+}
+
+/* Top Artist 2D Graphics */
+
+#artistRange {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: italic;
+}
+
+#artistTile {
+    display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+}
+
+#artistAvi {
+    display: grid;
+        justify-content: start;
+        align-items: center;
+}
+
+#artistAvi > img {
+    padding: 2rem;
+    border: none;
+    border-radius: 10rem;
+    z-index: 94;
+    transition: scale 0.2s ease-in-out;
+}
+
+#artistName {
+    display: grid;
+        grid-row-gap: 11rem;
+        padding-left: 1rem;
+        justify-items: end;
+}
+
+#artistName > h3 {
+    z-index: 94;
+}
+
+#artistAvi > img:hover {
+    scale: 105%;
+}
+
+.Circle {
+    width: 200px;
+    height: 200px;
+    opacity: 100%;
+    border: none;
+    border-radius: 10rem;
+    position: absolute;
+    transition: scale 0.2s ease-in-out;
+    margin-top: -6rem;
+}
+
+#artist_gfx_1 {
+    background: var(--accent);
+        top: 19rem;
+        left: 7rem;
+        z-index: 93;
+        
+}
+
+#artist_gfx_2 {
+    background: var(--primary);
+        top: 19rem;
+        left: 9rem;
+        z-index: 92;
+}
+
+#artist_gfx_3 {
+    background: var(--secondary);
+        top: 19rem;
+        left: 10rem;
+        z-index: 91;
+}
+
+#artist_gfx_4 {
+    background: var(--accent);
+        top: 35.45rem;
+        left: 7rem;
+        z-index: 93;
+}
+
+#artist_gfx_5 {
+    background: var(--primary);
+    top: 35.45rem;
+        left: 9rem;
+        z-index: 92;
+}
+
+#artist_gfx_6 {
+    background: var(--secondary);
+    top: 35.45rem;
+        left: 10rem;
+        z-index: 91;
+}
+
+#artist_gfx_7 {
+    background: var(--accent);
+        top: 52rem;
+        left: 7rem;
+        z-index: 93;
+}
+
+#artist_gfx_8 {
+    background: var(--primary);
+    top: 52rem;
+        left: 9rem;
+        z-index: 92;
+}
+
+#artist_gfx_9 {
+    background: var(--secondary);
+    top: 52rem;
+        left: 10rem;
+        z-index: 91;
+}
+
+#artist_gfx_10 {
+    background: var(--accent);
+        top: 68.45rem;
+        left: 7rem;
+        z-index: 93;
+}
+
+#artist_gfx_11 {
+    background: var(--primary);
+    top: 68.45rem;
+        left: 9rem;
+        z-index: 92;
+}
+
+#artist_gfx_12 {
+    background: var(--secondary);
+    top: 68.45rem;
+        left: 10rem;
+        z-index: 91;
+}
+
+#artist_gfx_13 {
+    background: var(--accent);
+        top: 85rem;
+        left: 7rem;
+        z-index: 93;
+}
+
+#artist_gfx_14 {
+    background: var(--primary);
+    top: 85rem;
+        left: 9rem;
+        z-index: 92;
+}
+
+#artist_gfx_15 {
+    background: var(--secondary);
+    top: 85rem;
+        left: 10rem;
+        z-index: 91;
+}
+
+.Circle:hover {
+    scale: 105%;
+}
+
+/* Player Hub Styles*/
+
+#current {
+    display: flex;
+    gap: 1rem;
+}
+
+#playlistInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#songInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Top Tracks 2D Graphics */
+
+#trackRange {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: italic;
+}
+
+/* Genre Visualizer Styles */
+
+#vis {
+    z-index: 93;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  
+  50% {
+    scale: 1 1.5;
+  }
+  
+  to {
+    rotate: 360deg;
+  }
+}
+
+#blob {
+  background-color: pink;
+  height: 500px;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, pink, red);
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  z-index: 91;
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 92;
+  backdrop-filter: blur(200px);
+}
+
+/* Social Sharing Buttons */
+
+#social-sharing-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3vw;
+    gap: 3rem;
+    color: var(--accent);
+}
+
+.sharing-button {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.sharing-button > i {
+    font-size: 48px;
+}

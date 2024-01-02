@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/gfx.css" />
+    <title>Immersify</title>
+  </head>
+  <body onload="onPageLoad()">
+          <canvas id="webgl"></canvas>
+          <main>
+              <nav id="tools">
+                  <div id="controls">
+                      <button id="controlBtn" onclick="previous()">
+                          <i class="fa-solid fa-backward" onclick="previous()" value="Prev"></i>
+                      </button>
+                      <button id="controlBtn" onclick="play()">
+                          <i class="fa-solid fa-play" onclick="play()" value="Play"></i>
+                      </button>
+                      <button id="controlBtn" onclick="shuffle()">
+                          <i class="fa-solid fa-shuffle" onclick="shuffle()" value="Shuffle" id="shuffle"></i>
+                      </button>
+                      <button id="controlBtn" onclick="pause()">
+                          <i class="fa-solid fa-pause" onclick="pause()" value="Pause"></i>
+                      </button>
+                      <button id="controlBtn" onclick="next()">
+                          <i class="fa-solid fa-forward" onclick="next()" value="Next"></i>
+                      </button>
+                  </div>
+                  <div id="theme">
+                      <button id="themeBtn">
+                          <i id="sun" class="fa-solid fa-sun" style="display:grid;"></i>
+                          <i id="moon" class="fa-solid fa-moon" style="display:none;"></i>
+                      </button>
+                  </div>
+                  <div>
+                      <a href="#" id="topBtn">Back to Top &#8593;</a>
+                  </div>
+              </nav>
+              <div id="tokenSection" class="page">
+                  <section id="login" class="page">
+                      <h3>WELCOME TO</h3>
+                         <img id="login-light" src="../public/logo_black.png" alt="Immersify cursive logo" style="display:block;">
+                          <img id="login-dark" src="../public/logo_white.png" alt="Immersify cursive logo" style="display:none;">
+                      <div>
+                          <label for="clientId" class="form-label">Client ID</label>
+                          <input type="text" class="form-control" id="clientId" placeholder=""></input>
+                          <p>650c310f0b86447a986d654cad6f4053</p>
+                      </div>
+                      <div>
+                          <label for="clientSecret" class="form-label">Client Secret</label>
+                          <input type="text" class="form-control" id="clientSecret" placeholder=""></input>
+                          <p>00a32595f8294eacbebc48485434ef7f</p>
+                      </div>
+                      <input class="btn btn-primary btn-lg" type="button" onclick="requestAuthorization()" value="Log in with Spotify"><br/>
+                    </section>
+              </div>
+              <div id="deviceSection">
+                    <section id="header" class="page">
+                        <img id="logo-light" src="../public/logo_black.png" alt="Immersify cursive logo" style="display:block;">
+                        <img id="logo-dark" src="../public/logo_white.png" alt="Immersify cursive logo" style="display:none;">
+                      <h3>🎶 Welcome <span id="displayName"></span></h3>
+                    </section>
+
+                    <section id="profile" class="page">
+                        <div id="profileHead">
+                            <a id="userAvi" href="#"></a>
+                            <div id="profileText">
+                                <h2 id="profileName"></h2>
+                                <p id="id"></p>
+                            </div>
+                        </div>
+                        <div id="profileBody">
+                            <p id="followers"></p>
+                            <p><i class="fa-solid fa-location-dot"></i><i id="country"></i></p>
+                        </div>
+                        <div id="iPod">
+                            <a id="menu">MENU</a>
+                            <i class="fa-solid fa-backward-fast" id="back"></i>
+                            <i class="fa-solid fa-forward-fast" id="forward"></i>
+                            <a id="playpause"><i class="fa-solid fa-play"></i><i class="fa-solid fa-pause"></i></a>
+                        </div>
+                        <div id="profile_gfx_1"></div>
+                        <div id="profile_gfx_2">
+                              <div id="profile_overlay"></div>
+                        </div>
+                        <div id="profile_gfx_3"></div>
+                        <div id="profile_gfx_4"></div>
+                    </section>
+                    
+                    <section id="topArtists" class="page">
+                          <div>
+                              <h2>🏆 Your top artists <select id="artistRange" class="form-control">
+                                  <option value="short">lately</option>
+                                  <option value="medium">the last six months</option>
+                                  <option value="long">of all time</option>
+                              </select>.
+                              </h2>
+                              <input type="button" onclick="fetchTopArtists()" value="Reveal">
+                          </div>
+                          <div id="artistTile">
+                            <div id="artistAvi"></div>
+                            <div id="artistName"></div>
+                            <div>
+                                <div class="Circle" id="artist_gfx_1"></div>
+                                <div class="Circle" id="artist_gfx_2"></div>
+                                <div class="Circle" id="artist_gfx_3"></div>
+                                <div class="Circle" id="artist_gfx_4"></div>
+                                <div class="Circle" id="artist_gfx_5"></div>
+                                <div class="Circle" id="artist_gfx_6"></div>
+                                <div class="Circle" id="artist_gfx_7"></div>
+                                <div class="Circle" id="artist_gfx_8"></div>
+                                <div class="Circle" id="artist_gfx_9"></div>
+                                <div class="Circle" id="artist_gfx_10"></div>
+                                <div class="Circle" id="artist_gfx_11"></div>
+                                <div class="Circle" id="artist_gfx_12"></div>
+                                <div class="Circle" id="artist_gfx_13"></div>
+                                <div class="Circle" id="artist_gfx_14"></div>
+                                <div class="Circle" id="artist_gfx_15"></div>
+                            </div>
+                          </div>
+                    </section>
+                    
+                    <section id="tagline" class="page">
+                        <blockquote>
+                          <p>Your music has never looked so good.</p>
+                        </blockquote>
+                    </section>
+                        
+                    <section id="player" class="page">
+                      <h2>🎤 Currently <span id="playerStatus"></span></h2>
+                          <div>
+                              <div id="current">
+                                  <div id="playlistInfo">
+                                      <div id="playlistArt"></div>
+                                      <div><p id="playlistTitle"></p><p id="playlistOwner"></p><i id="trackTotal"></i><i id="duration_ms"></i></div>
+                                  </div>
+                                  <div id="songInfo">
+                                      <div id="albumImage"></div>
+                                      <div><p id="trackTitle"> </p><p id="trackArtist"></p></div>
+                                  </div>
+                              </div>
+                              <input type="button" class="btn btn-primary btn-sm mt-3" onclick="currentlyPlaying()" value="Refresh Currently Playing">
+                              <div>
+                                  <label for="devices" class="form-label">Devices</label>
+                                  <select id="devices" class="form-control">
+                                  </select>
+                                  <input class="btn btn-primary btn-sm mt-3" type="button" onclick="refreshDevices()" value="Refresh Devices">
+                                  <input type="button" class="btn btn-dark btn-sm  mt-3" onclick="transfer()" value="Transfer">
+                              </div>
+
+                              <div>
+                                  <label for="playlists" class="form-label">Playlists</label>
+                                  <select id="playlists" class="form-control">
+                                  </select>
+                                  <input class="btn btn-primary btn-sm mt-3" type="button" onclick="refreshPlaylists()" value="Refresh Playlists">
+                              </div>
+                              
+                              <div>
+                                  <label for="tracks" class="form-label">Tracks</label>
+                                  <select id="tracks" class="form-control">
+                                  </select>
+                                  <input class="btn btn-primary btn-sm mt-3" type="button" onclick="fetchTracks()" value="Fetch Tracks">
+                              </div>
+                              
+<!--                              <div id="playhead"></div>-->
+                          </div>
+                    </section>
+
+                    <section id="quote" class="page">
+                        <blockquote>
+                          <p>Music on. World off.<br>-AJay Deluxe</p>
+                        </blockquote>
+                    </section>
+
+                    <section id="topTracks" class="page">
+                          <div>
+                              <h2>📊 Your top tracks
+                                  <select id="trackRange">
+                                      <option value="short">lately</option>
+                                      <option value="medium">the last six months</option>
+                                      <option value="long">of all time</option>
+                                  </select>.
+                              </h2>
+                              <input type="button" onclick="fetchTopTracks()" value="Reveal">
+                          </div>
+                          <ol>
+                              <div id="toptrack"></div>
+                          </ol>
+                    </section>
+                    
+                    <section id="visuals" class="page">
+                        <div id="vis">
+                            <h2>🔮 What's the Vibe*?</h2>
+                            <i>*GENRE</i>
+                            <p id="current_id"></p>
+                            <div id="genre"></div>
+                        </div>
+                        <div>
+                            <div id="blob"></div>
+                            <div id="blur"></div>
+                        </div>
+                    </section>
+
+                    <section id="share" class="page">
+                        <blockquote>
+                          <p>🔁 Replay?</p>
+                        </blockquote>
+                        <div id="social-sharing-buttons">
+                            <div class="sharing-button" id="facebook-button">
+                                <i class="fa-brands fa-facebook" alt="Share on Facebook"></i>
+                              </div>
+                              <div class="sharing-button" id="twitter-button">
+                                  <i class="fa-brands fa-x-twitter" alt="Share on Twitter"></i>
+                              </div>
+                              <div class="sharing-button" id="instagram-button">
+                                  <i class="fa-brands fa-instagram" alt="Share on Instagram"></i>
+                              </div>
+                              <div class="sharing-button" id="copy-button">
+                                  <i class="fa-regular fa-copy" alt="Share Immersify" title="Click me to copy current URL"></i>
+                              </div>
+                          </div>
+                    </section>
+              </div>
+      </main>
+      <footer>
+        <p>&copy; 2023 Ian O'Dwyer | Immersify</p>
+      </footer>
+    
+    <script type="text/javascript" src="../src/js/script.js"></script>
+    <script type="module" src="../src/js/canvas.js"></script>
+    <script type="text/javascript" src="../src/js/spotifyApi.js"></script>
+  </body>
+</html>

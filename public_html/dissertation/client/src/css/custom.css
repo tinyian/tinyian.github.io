@@ -1,0 +1,199 @@
+:root {
+    --background-color: 15 15 15;
+    --card-color: 241 196 15;
+    --border-color: 250 250 250;
+}
+
+/* Basic HTML Styling */
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: rgb(var(--background-color));
+    margin: 0rem;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    background-color: rgb(var(--card-color) / 80%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(var(--border-color) / 80%);
+    border-radius: 1rem;
+    position: relative;
+    z-index: 11;
+}
+
+/* 3D Cards */
+
+.screen {
+    width: 400px;
+    display: flex;
+    border: 3px solid rgb(var(--card-color) / 80%);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    background-color: rgb(var(--card-color) / 15%);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.screen > .screen-img {
+    background-image: url("https://blobcdn.same.energy/a/96/f8/96f89fc85b91aa912f12ace8f2f405550cc72416");
+    height: 100%;
+    width: 100%;
+    background-size: 300%;
+    background-position: center;
+    position: absolute;
+    z-index: 3;
+    filter: sepia(100%) hue-rotate(340deg);
+    opacity: 0.6;
+    animation: pan-img 15s linear infinite;
+}
+
+.screen-overlay {
+    background: linear-gradient(
+        rgb(var(--card-color) / 0.15),
+        rgb(var(--card-color) / 0.15) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    background-size: 100% 9px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    left: 0px;
+    top: 0px;
+    animation: pan-overlay 22s infinite linear;
+}
+
+.screen > .screen-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    border: 1px solid rgb(var(--card-color) / 50%);
+    border-radius: 0.6rem;
+    margin: 1rem;
+    padding-bottom: 6rem;
+    gap: 4rem;
+    position: relative;
+    z-index: 5;
+}
+
+.screen > .screen-content > .screen-icon {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 0px 0px 0.5rem white;
+}
+
+#albumImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: url(#noise);
+}
+
+/* Blob Glow */
+
+#blob {
+    background-color: pink;
+    height: 500px;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, pink, rgb(var(--card-color)));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(200px);
+}
+
+/* Animations */
+
+@keyframes pan-overlay {
+    from {
+        background-position: 0% 0%;
+    }
+    
+    to {
+        background-position: 0% -100%;
+    }
+}
+
+@keyframes pan-img {
+    0% { /* View 1 */
+        background-position: 36% 42%;
+        background-size: 200%;
+    }
+    
+    20% {
+        background-position: 30% 35%;
+        background-size: 200%;
+    }
+    20.0001% { /* View 2 */
+        background-position: 60% 85%;
+        background-size: 500%;
+    }
+    
+    40% {
+        background-position: 49% 81%;
+        background-size: 500%;
+    }
+    40.0001% { /* View 3 */
+        background-position: 80% 42%;
+        background-size: 300%;
+    }
+    
+    60% {
+        background-position: 84% 33%;
+        background-size: 300%;
+    }
+    60.0001% { /* View 4 */
+        background-position: 0% 0%;
+        background-size: 300%;
+    }
+    
+    80% {
+        background-position: 15% 4%;
+        background-size: 300%;
+    }
+    80.0001% { /* View 5 */
+        background-position: 80% 10%;
+        background-size: 200%;
+    }
+    
+    100% {
+        background-position: 86% 14%;
+        background-size: 200%;
+    }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  
+  50% {
+    scale: 1 1.5;
+  }
+  
+  to {
+    rotate: 360deg;
+  }
+}
