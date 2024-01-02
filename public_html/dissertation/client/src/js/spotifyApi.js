@@ -1,4 +1,4 @@
-var redirect_uri = "http://users.sussex.ac.uk/~io202/dissertation/client/public/index.html";
+var redirect_uri = "https://tinyian.github.io/public_html/dissertation/client/public/";
 
 var client_id = "";
 var client_secret = "";
