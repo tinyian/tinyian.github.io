@@ -44,17 +44,21 @@
   border: 1px solid var(--border-subtle);
   padding: var(--space-l);
   box-shadow: var(--shadow-s);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-s);
-    --y: 0px;        /* stagger offset */
-      --lift: 0px;     /* hover lift */
-      transform: translateY(calc(var(--y) + var(--lift)));
 
-      transition:
-        transform var(--duration-med) var(--ease-out),
-        box-shadow var(--duration-med) var(--ease-out),
-        background-color var(--duration-med) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  --y: 0px;
+  --lift: 0px;
+
+  margin-top: var(--y);
+  transform: translateY(var(--lift));
+
+  transition:
+    transform var(--duration-med) var(--ease-out),
+    box-shadow var(--duration-med) var(--ease-out),
+    background-color var(--duration-med) var(--ease-out);
 }
 
 .card.glass {
@@ -122,6 +126,11 @@
 
 /* Subtle stagger for “playful” rhythm (desktop only) */
 @media (min-width: 900px) {
-    .projects-grid > .card:not(.featured):nth-child(2) { --y: 12px; }
-      .projects-grid > .card:not(.featured):nth-child(3) { --y: 24px; }
+  .projects-grid > .card:not(.featured):nth-child(2),
+  .projects-grid > .card:not(.featured):nth-child(3) {
+    --y: 0px;
+  }
+
+  .projects-grid > .card:not(.featured):nth-child(2) { --y: 12px; }
+  .projects-grid > .card:not(.featured):nth-child(3) { --y: 24px; }
 }
