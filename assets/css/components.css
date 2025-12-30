@@ -1,0 +1,47 @@
+/* assets/css/components.css */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius-m);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-med) var(--ease-out),
+    box-shadow var(--duration-med) var(--ease-out);
+}
+
+.button.primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent)
+  );
+  color: var(--background);
+  box-shadow: var(--shadow-s);
+}
+
+.button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-m);
+}
+
+.button.ghost {
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.button.ghost:hover {
+  background-color: var(--surface-muted);
+}
+
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-l);
+  border: 1px solid var(--border-subtle);
+  padding: var(--space-l);
+  box-shadow: var(--shadow-s);
+}

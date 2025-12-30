@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--Landing / portfolio hub -->
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
 
 </head>
 <body>
@@ -29,7 +30,7 @@
 </header>
 
 <main id="main">
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>
       Creative Developer<br />
       <span class="muted">Designing immersive, accessible web experiences</span>
@@ -45,6 +46,13 @@
       <a class="button ghost" href="about.html">About Me</a>
     </div>
   </section>
+  <button
+    class="button ghost"
+    data-theme-toggle
+    aria-label="Toggle light and dark theme"
+  >
+    ☀︎ / ☾
+  </button>
 </main>
 
 <footer class="site-footer">
