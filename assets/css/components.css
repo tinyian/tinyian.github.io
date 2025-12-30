@@ -129,13 +129,6 @@
   }
 }
 
-/* Optional: make a featured card a full-width banner row */
-@media (min-width: 900px) {
-  .card.featured.banner {
-    grid-column: 1 / -1;
-  }
-}
-
 /* Subtle stagger for “playful” rhythm (desktop only) */
 @media (min-width: 900px) {
   .projects-grid > .card:not(.featured):nth-child(2),
