@@ -44,6 +44,9 @@
   border: 1px solid var(--border-subtle);
   padding: var(--space-l);
   box-shadow: var(--shadow-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
 }
 
 .card.glass {
@@ -67,9 +70,25 @@
 
 .card.glass:hover {
   transform: translateY(-4px);
+  backdrop-filter: blur(14px) saturate(130%);
   box-shadow:
     0 16px 40px rgba(0,0,0,0.18),
     inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.card .button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2xs);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--text) 85%, transparent);
 }
 
 .projects-preview {
@@ -95,10 +114,11 @@
 
 /* Subtle stagger for “playful” rhythm (desktop only) */
 @media (min-width: 900px) {
-  .projects-grid > .card:nth-child(2) {
-    transform: translateY(10px);
+  .projects-grid > .card:not(.featured):nth-child(2) {
+    transform: translateY(12px);
   }
-  .projects-grid > .card:nth-child(3) {
-    transform: translateY(20px);
+
+  .projects-grid > .card:not(.featured):nth-child(3) {
+    transform: translateY(24px);
   }
 }

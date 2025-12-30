@@ -12,7 +12,7 @@ main {
 }
 
 .section {
-  padding-block: var(--section-pad-y);
+  padding-block: calc(var(--section-pad-y) * 1.2);
 }
 
 .container {
