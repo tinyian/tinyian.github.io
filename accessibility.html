@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--# Optional: explicit a11y statement (strong signal)-->
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
 
 </head>
 <body>
@@ -29,7 +30,7 @@
 </header>
 
 <main id="main">
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>
       Creative Developer<br />
       <span class="muted">Designing immersive, accessible web experiences</span>
@@ -45,6 +46,48 @@
       <a class="button ghost" href="about.html">About Me</a>
     </div>
   </section>
+  <section class="projects-preview fade-in">
+    <h2>Selected Work</h2>
+
+    <div class="projects-grid">
+      <article class="card glass">
+        <h3>Immersive Timeline</h3>
+        <p>
+          A perspective-driven timeline blending 2D layout with 3D spatial cues.
+        </p>
+        <a class="button ghost" href="projects/immersive-timeline/">
+          View Project
+        </a>
+      </article>
+
+      <article class="card glass">
+        <h3>Glass UI Experiments</h3>
+        <p>
+          Exploring skeuomorphic and glassmorphic interfaces with AAA contrast.
+        </p>
+        <a class="button ghost" href="projects/glass-ui-experiment/">
+          View Project
+        </a>
+      </article>
+
+      <article class="card glass">
+        <h3>CodePen Studies</h3>
+        <p>
+          Small creative coding experiments focused on motion, light, and feel.
+        </p>
+        <a class="button ghost" href="projects/codepen-embeds/">
+          View Projects
+        </a>
+      </article>
+    </div>
+  </section>
+  <button
+    class="button ghost"
+    data-theme-toggle
+    aria-label="Toggle light and dark theme"
+  >
+    ☀︎ / ☾
+  </button>
 </main>
 
 <footer class="site-footer">

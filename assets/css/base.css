@@ -7,6 +7,19 @@ html {
   line-height: 1.6;
 }
 
+main {
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-pad-y);
+}
+
+.container {
+  width: min(var(--container), 100%);
+  margin-inline: auto;
+}
+
 body {
   min-height: 100vh;
 }
@@ -47,8 +60,10 @@ button:focus-visible {
 h1, h2, h3 {
   line-height: 1.2;
   letter-spacing: -0.02em;
+  margin: 0 0 var(--space-s) 0;
 }
 
 p {
-  max-width: 65ch;
+    margin: 0 0 var(--space-m) 0;
+    max-width: var(--measure);
 }

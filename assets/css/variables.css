@@ -59,3 +59,13 @@
   --border-subtle: rgba(255,255,255,0.08);
   --border-strong: rgba(255,255,255,0.18);
 }
+
+:root {
+  /* Layout rhythm */
+  --container: 1100px;
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --section-pad-y: clamp(2.5rem, 6vw, 5rem);
+
+  /* Type rhythm helpers (we’ll use later too) */
+  --measure: 65ch;
+}

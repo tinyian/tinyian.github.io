@@ -78,7 +78,27 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-l);
   margin-top: var(--space-l);
+
+  /* responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  align-items: stretch;
+}
+
+/* Optional: featured card spans 2 columns on wide screens */
+@media (min-width: 900px) {
+  .card.featured {
+    grid-column: span 2;
+  }
+}
+
+/* Subtle stagger for “playful” rhythm (desktop only) */
+@media (min-width: 900px) {
+  .projects-grid > .card:nth-child(2) {
+    transform: translateY(10px);
+  }
+  .projects-grid > .card:nth-child(3) {
+    transform: translateY(20px);
+  }
 }
