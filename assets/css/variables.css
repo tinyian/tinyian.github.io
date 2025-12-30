@@ -62,7 +62,7 @@
 
 :root {
   /* Layout rhythm */
-  --container: 1100px;
+  --container: 1200px;
   --gutter: clamp(1rem, 3vw, 2rem);
   --section-pad-y: clamp(2.5rem, 6vw, 5rem);
 
